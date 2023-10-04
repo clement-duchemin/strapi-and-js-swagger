@@ -29,9 +29,10 @@ let filename = url.split('/').pop();
 filename = filename.split('.')[0];
 if(filename == "index"){
     //display all articles in index.html
-    fetch('http://localhost:1337/api/articles?sort=title:asc')
+    fetch('http://localhost:1337/api/articles')
     .then(response => response.json())
-    .then(data => displayArticles(data.data));
+    .then(data => displayArticles(data.data))
+
 }else if (filename == "article"){
     //display Single article on article.html
     let parametersURL = new URLSearchParams(window.location.search);
